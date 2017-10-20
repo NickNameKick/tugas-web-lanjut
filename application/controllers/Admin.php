@@ -6,7 +6,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * Class admin
  * @property CI_Loader $load
  * @property CI_Session $session
+ * @property CI_Input $input
  * @property CI_URI $uri
+ * @property CI_Upload $upload
+ * @property CI_FTP $ftp
+ * @property DbUpload $DbUpload
+ * @property DbGallery $DbGallery
+ * @property DbKontak $DbKontak
  */
 class admin extends CI_Controller
 {
@@ -279,7 +285,7 @@ class admin extends CI_Controller
         $id_gallery = $this->uri->segment(3);
         $id_akun    = $this->uri->segment(4);
 
-        $this->dbGallery->deleteFotoGallery($id_gallery);
+        $this->DbGallery->deleteFotoGallery($id_gallery);
 
         redirect(base_url('index.php/admin/formGallery/'.$id_akun));
 
